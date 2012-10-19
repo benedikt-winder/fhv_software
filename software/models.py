@@ -18,3 +18,5 @@ class Lector(models.Model):
     telephone = models.IntegerField()
     def __unicode__(self):
         return self.username
+    
+# Test
