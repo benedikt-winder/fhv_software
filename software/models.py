@@ -4,10 +4,8 @@ class Software(models.Model):
     sw_id = models.AutoField(primary_key=True)
     manufacturer = models.CharField(max_length=200)
     product = models.CharField(max_length=200)
-    APPVYES = 'JA'
-    APPVNO = 'NA'
-    CHOICEAPPV = ((APPVYES, 'Yes'), (APPVNO, 'No'),)
-    appv = models.CharField(max_length=5, choices=CHOICEAPPV, default=APPVYES)
+    APPVDROPDOWN = (('Yes', 'Yes'), ('No', 'No'))
+    appv = models.CharField(max_length=3, choices=APPVDROPDOWN)
     version = models.CharField(max_length=200)
     comment = models.CharField(max_length=200)
     def __unicode__(self):
