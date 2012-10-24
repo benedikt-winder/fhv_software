@@ -8,8 +8,9 @@ class Software(models.Model):
     appv = models.CharField(max_length=3, choices=APPVDROPDOWN)
     version = models.CharField(max_length=200)
     comment = models.CharField(max_length=200)
+    # For the output for the Reports
     def __unicode__(self):
-        return '%s %s (%s)' %(self.manufacturer, self.product, self.version)
+        return '%s %s (%s) %s' %(self.manufacturer, self.product, self.version, self.appv)
 
 class Lector(models.Model):
     lector_id = models.AutoField(primary_key=True)
@@ -17,6 +18,7 @@ class Lector(models.Model):
     username = models.CharField(max_length=5)
     fullname = models.CharField(max_length=100)
     telephone = models.IntegerField()
+    # For the output for the Reports
     def __unicode__(self):
-        return '%s (%s)' %(self.fullname, self.username)
+        return '%s - %s - %s' %(self.username, self.fullname, self.software)
 
