@@ -1,0 +1,11 @@
+<html>
+<body>
+<h1>Software by name</h1>
+{% for obj in objects %}
+    {{ obj }}
+    {{ obj.product }}
+    {{ obj.version }}
+    <br/>
+{% endfor %}
+</body>
+</html>
